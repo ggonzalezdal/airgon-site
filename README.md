@@ -1,93 +1,147 @@
 # airgon.dev
 
-Source code for **airgon.dev**, the personal website and project hub of Gonzalo González Dalbes.
+This repository contains the source code for projects published on:
 
-This repository hosts the static site deployed automatically through Cloudflare Pages.
+https://airgon.dev
 
-## Deployment Architecture
+The goal of this repository is to host **small, practical web applications and experiments** developed as part of my learning journey in software development.
 
-The website uses a modern continuous deployment pipeline:
+---
 
-GitHub Repository → Cloudflare Pages → airgon.dev
+# Projects
 
-Every time a commit is pushed to the `main` branch, Cloudflare automatically rebuilds and deploys the site globally.
+## Wine Manager
 
-## Project Structure
+A web-based tool designed to explore and manage large wine datasets.
+
+Live demo:
+
+https://airgon.dev/projects/wine-manager/
+
+Current capabilities:
+
+- Load and display 1500+ wines
+- Search across multiple fields
+- Filter wines by:
+  - Type
+  - Country
+  - Region
+- Clean table-based interface
+- Fast static deployment
+
+Dataset format:
 
 ```
-airgon-site/
+CSV → JSON → Web UI
+```
+
+---
+
+# Technology Stack
+
+Frontend
+
+- HTML
+- CSS
+- Vanilla JavaScript
+
+Hosting
+
+- Cloudflare Pages
+
+Utilities
+
+- Python script for converting CSV datasets to JSON
+
+---
+
+# Repository Structure
+
+```
+airgon-site
 │
-├── index.html
-├── style.css
-├── script.js
-└── README.md
+├─ css/
+│   └─ style.css
+│
+├─ projects/
+│   ├─ war-assistant/
+│   │
+│   └─ wine-manager/
+│       ├─ index.html
+│       ├─ app.js
+│       ├─ style.css
+│       └─ data/
+│           ├─ wines.csv
+│           └─ wines.json
+│
+├─ tools/
+│   └─ csv_to_wines_json.py
+│
+├─ README.md
+├─ ROADMAP.md
+└─ .gitignore
 ```
 
-Currently the site is a simple static webpage, but it will evolve into a project hub containing:
+---
 
-- portfolio projects
-- experiments and labs
-- the wine management application
-- future tools and demos
-
-## Development Workflow
-
-Development follows a standard Git workflow:
-
-```
-edit files locally
-git add .
-git commit -m "message"
-git push
-```
-
-Cloudflare Pages automatically detects the new commit and redeploys the website.
-
-## Local Development
+# Development
 
 Clone the repository:
 
 ```
-git clone https://github.com/gonzalezdal/airgon-site.git
-```
-
-Enter the project directory:
-
-```
+git clone https://github.com/ggonzalezdal/airgon-site.git
 cd airgon-site
 ```
 
-Open `index.html` in a browser or run a local development server.
-
-Example with Python:
+Open locally:
 
 ```
-python3 -m http.server
+index.html
 ```
 
-Then open:
+Or use a local server.
+
+Example:
 
 ```
-http://localhost:8000
+python -m http.server
 ```
 
-## Domain
+---
 
-The website is available at:
+# Deployment
+
+Deployment is handled automatically via **Cloudflare Pages**.
+
+Every push to the `main` branch triggers a new deployment.
+
+---
+
+# Versioning
+
+Releases follow semantic versioning.
+
+Example:
 
 ```
-https://airgon.dev
+v0.1.0
 ```
 
-Subdomains may host future projects such as:
+The current version:
+
+**Wine Manager MVP (Pre-release)**
+
+See:
 
 ```
-wine.airgon.dev
-lab.airgon.dev
-war.airgon.dev
+ROADMAP.md
 ```
 
-## Author
+for the full development plan.
+
+---
+
+# Author
 
 Gonzalo González Dalbes  
-Barcelona, Spain
+Barcelona
