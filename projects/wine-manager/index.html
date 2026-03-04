@@ -5,23 +5,77 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Wine Manager</title>
   <link rel="stylesheet" href="../../css/style.css" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <main class="container" style="padding: 32px 18px;">
-    <a class="btn small" href="/">← Back to airgon.dev</a>
+  <main class="container wm" style="padding: 32px 18px;">
+    <div class="wm-top">
+      <a class="btn small" href="/">← Back</a>
+      <div>
+        <h3 style="margin:0;">Wine Manager</h3>
+        <p class="wm-sub" style="margin:4px 0 0;">Table + search + filters (MVP)</p>
+      </div>
+    </div>
 
-    <section class="section">
-      <div class="section-head">
-        <h3>Wine Manager</h3>
-        <p>Table + filters + CRUD foundation (starting now).</p>
+    <section class="wm-controls card" style="margin-top:16px;">
+      <div class="wm-row">
+        <label class="wm-label">
+          Search
+          <input id="q" class="wm-input" type="search" placeholder="Name, producer, region, country..." />
+        </label>
+
+        <label class="wm-label">
+          Type
+          <select id="type" class="wm-input">
+            <option value="">All</option>
+          </select>
+        </label>
+
+        <label class="wm-label">
+          Country
+          <select id="country" class="wm-input">
+            <option value="">All</option>
+          </select>
+        </label>
+
+        <label class="wm-label">
+          Region
+          <select id="region" class="wm-input">
+            <option value="">All</option>
+          </select>
+        </label>
+
+        <button id="reset" class="btn small">Reset</button>
+      </div>
+    </section>
+
+    <section class="wm-table card" style="margin-top:14px;">
+      <div class="wm-meta">
+        <div id="count" class="wm-count">0 wines</div>
+        <div class="wm-hint">Tip: use search + dropdown filters</div>
       </div>
 
-      <div class="card" style="margin-top:16px;">
-        <p style="margin:0;color:var(--muted);">
-          MVP coming next: import your Excel wines → searchable table → filters.
-        </p>
+      <div class="wm-scroll">
+        <table class="wm-t">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Producer</th>
+              <th>Vintage</th>
+              <th>Type</th>
+              <th>Country</th>
+              <th>Region</th>
+              <th class="num">Price</th>
+              <th class="num">ABV</th>
+              <th class="num">cl</th>
+            </tr>
+          </thead>
+          <tbody id="tbody"></tbody>
+        </table>
       </div>
     </section>
   </main>
+
+  <script src="app.js"></script>
 </body>
 </html>
