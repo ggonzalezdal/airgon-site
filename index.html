@@ -1,12 +1,175 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>airgon.dev</title>
-  <meta charset="UTF-8">
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-  <h1>Welcome to airgon.dev</h1>
-  <p>This is my first deployed website.</p>
-  <p>Local development works ✅</p>
+
+  <header class="site-header">
+    <div class="container">
+      <div class="brand">
+        <div class="logo">a</div>
+        <div>
+          <h1 class="title">airgon.dev</h1>
+          <p class="subtitle">Projects, experiments, and tools — built step by step.</p>
+        </div>
+      </div>
+
+      <nav class="nav">
+        <a href="#projects">Projects</a>
+        <a href="#about">About</a>
+        <a href="#stack">Stack</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <section class="hero">
+      <div class="hero-left">
+        <h2>Developer hub</h2>
+        <p>
+          This site hosts my public projects and demos. Everything is deployed automatically:
+          <strong>git push → Cloudflare Pages → live</strong>.
+        </p>
+
+        <div class="cta-row">
+          <a class="btn primary" href="#projects">View projects</a>
+          <a class="btn" href="https://github.com/gonzalezdal/airgon-site" target="_blank" rel="noreferrer">GitHub repo</a>
+        </div>
+
+        <div class="badges">
+          <span class="badge">Cloudflare Pages</span>
+          <span class="badge">GitHub</span>
+          <span class="badge">Static HTML/CSS/JS</span>
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <div class="panel">
+          <p class="panel-title">Status</p>
+          <ul class="panel-list">
+            <li><span class="dot ok"></span> Domain: <strong>airgon.dev</strong></li>
+            <li><span class="dot ok"></span> Auto-deploy: <strong>enabled</strong></li>
+            <li><span class="dot ok"></span> HTTPS: <strong>active</strong></li>
+          </ul>
+          <p class="panel-foot">Last update happens automatically on every push.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="section">
+      <div class="section-head">
+        <h3>Projects</h3>
+        <p>Live demos hosted under <strong>airgon.dev/projects</strong>.</p>
+      </div>
+
+      <div class="grid">
+        <article class="card">
+          <div class="card-top">
+            <h4>Wine Manager</h4>
+            <span class="tag">In progress</span>
+          </div>
+          <p>
+            Admin-style tool for managing a sommelier wine catalog: table, filters and CRUD foundation.
+          </p>
+          <div class="card-actions">
+            <a class="btn small primary" href="/projects/wine-manager/">Open</a>
+            <a class="btn small" href="#stack">Plan</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-top">
+            <h4>WAR Assistant</h4>
+            <span class="tag">Reference UI</span>
+          </div>
+          <p>
+            Design + UX reference for the future restaurant tools. We’ll reuse the look and adapt it.
+          </p>
+          <div class="card-actions">
+            <a class="btn small" href="/projects/war-assistant/">Open</a>
+            <a class="btn small" href="https://github.com" target="_blank" rel="noreferrer">Repo</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-top">
+            <h4>Lab</h4>
+            <span class="tag">Soon</span>
+          </div>
+          <p>
+            Small experiments, notes, and prototypes (networking, security, UI components).
+          </p>
+          <div class="card-actions">
+            <a class="btn small" href="#">Coming soon</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="section-head">
+        <h3>About</h3>
+        <p>
+          Building a software engineering portfolio with a focus on web development and practical tools.
+        </p>
+      </div>
+
+      <div class="two-col">
+        <div class="card soft">
+          <h4>What this site is</h4>
+          <p>
+            A public workspace. Each project is developed locally, pushed to GitHub, and deployed automatically.
+          </p>
+        </div>
+
+        <div class="card soft">
+          <h4>What comes next</h4>
+          <p>
+            Wine Manager MVP → import Excel data → filters → CRUD → then “wine list builder”.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="stack" class="section">
+      <div class="section-head">
+        <h3>Stack</h3>
+        <p>Simple now. Scalable later.</p>
+      </div>
+
+      <div class="stack">
+        <div class="stack-item">
+          <span class="stack-label">Hosting</span>
+          <span class="stack-value">Cloudflare Pages</span>
+        </div>
+        <div class="stack-item">
+          <span class="stack-label">Repo</span>
+          <span class="stack-value">GitHub</span>
+        </div>
+        <div class="stack-item">
+          <span class="stack-label">Frontend</span>
+          <span class="stack-value">HTML / CSS / JavaScript (no framework)</span>
+        </div>
+        <div class="stack-item">
+          <span class="stack-label">Database (later)</span>
+          <span class="stack-value">Postgres (e.g., Supabase) + API</span>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p>© <span id="year"></span> airgon.dev — built with GitHub + Cloudflare Pages.</p>
+    </footer>
+
+  </main>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
