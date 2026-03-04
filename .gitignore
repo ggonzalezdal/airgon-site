@@ -1,0 +1,32 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# VS Code settings
+.vscode/
+
+# Logs
+*.log
+
+# Environment files
+.env
+.env.*
+
+# Node modules (future JS tooling)
+node_modules/
+
+# Build folders (future frameworks)
+dist/
+build/
+
+# Temporary files
+*.tmp
+*.swp
+
+# Python (in case you add scripts later)
+__pycache__/
+*.pyc
+
+# MacOS
+.AppleDouble
+.LSOverride
