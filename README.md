@@ -1,71 +1,130 @@
-# Wine Manager
+# airgon.dev
 
-Wine Manager is a lightweight web application for browsing and exploring a wine catalog.  
-The project is designed as a simple, fast, and maintainable interface for managing wine datasets.
+This repository contains the source code for projects published on:
 
-The current version provides a responsive table interface with filtering, sorting, pagination, and a detailed modal view for each wine.
+https://airgon.dev
 
-## Features
+The goal of this repository is to host **small, practical web applications and experiments** developed as part of my learning journey in software development.
 
-Version 0.2.0 includes:
+---
 
+# Projects
+
+## Wine Manager
+
+A web-based tool designed to explore and manage large wine datasets.
+
+Live demo:
+
+https://airgon.dev/projects/wine-manager/
+
+### Current capabilities (v0.2.0)
+
+- Load and display 1500+ wines
 - Full-text search across wine attributes
-- Filtering by type, country, and region
-- Column sorting (ascending and descending)
-- Pagination (default 25 wines per page)
+- Filters by:
+  - Type
+  - Country
+  - Region
+- Column sorting
+- Pagination
 - Wine detail modal
-- Dark-theme compatible interface
-- Responsive layout
+- Responsive table interface
 
-The application currently loads approximately 1500 wines from a local JSON dataset.
+Dataset pipeline:
 
-## Project Structure
+CSV → JSON → Web UI
+
+---
+
+# Technology Stack
+
+Frontend
+
+- HTML
+- CSS
+- Vanilla JavaScript
+
+Hosting
+
+- Cloudflare Pages
+
+Utilities
+
+- Python script for converting CSV datasets to JSON
+
+---
+
+# Repository Structure
 
 airgon-site  
-projects  
-wine-manager  
-data  
-wines.json  
-app.js  
-style.css  
-index.html
+│  
+├─ css/  
+│   └─ style.css  
+│  
+├─ projects/  
+│   ├─ war-assistant/  
+│   │  
+│   └─ wine-manager/  
+│       ├─ index.html  
+│       ├─ app.js  
+│       ├─ style.css  
+│       └─ data/  
+│           ├─ wines.csv  
+│           └─ wines.json  
+│  
+├─ tools/  
+│   └─ csv_to_wines_json.py  
+│  
+├─ README.md  
+├─ ROADMAP.md  
+└─ .gitignore  
 
-## Current Architecture
+---
 
-The application currently runs as a static frontend application.
+# Development
 
-Frontend  
-→ JSON dataset
+Clone the repository:
 
-The data is loaded directly in the browser from a local dataset.
+git clone https://github.com/ggonzalezdal/airgon-site.git  
+cd airgon-site
 
-## Development Workflow
+Run locally using a simple HTTP server:
 
-Feature development follows a simple branching model:
+python -m http.server
 
-main  
-Stable releases
+Then open:
 
-feature/*  
-Feature development branches
+http://localhost:8000
 
-Each milestone is tagged and released.
+---
 
-## Roadmap
+# Deployment
 
-The next milestone focuses on moving from a static dataset to a database-backed architecture.
+Deployment is handled automatically via **Cloudflare Pages**.
 
-See roadmap.md for details.
+Every push to the `main` branch triggers a new deployment.
 
-## Upcoming Milestone
+---
 
-Version 0.3.0 will introduce database integration:
+# Versioning
 
-- PostgreSQL database (Supabase)
-- Import existing wine dataset
-- Replace local JSON with database queries
-- Prepare architecture for future backend/API layer
+Releases follow semantic versioning.
 
-## License
+Example:
 
-MIT License
+v0.1.0  
+v0.2.0
+
+Current milestone:
+
+Wine Manager v0.2.0 — Interactive catalog interface
+
+See `ROADMAP.md` for upcoming development milestones.
+
+---
+
+# Author
+
+Gonzalo González Dalbes  
+Barcelona
