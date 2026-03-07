@@ -1,146 +1,103 @@
-# Airgon.dev Projects Roadmap
+# Wine Manager Roadmap
 
-This document tracks the development milestones of the **airgon.dev projects repository**, starting with the **Wine Manager application**.
+This document outlines the development milestones for the Wine Manager project.
 
-The goal is to progressively build useful real-world tools while keeping the architecture simple, transparent, and educational.
+The goal is to evolve the application from a static frontend prototype into a scalable wine catalog platform.
 
 ---
 
-# Version Roadmap
+## v0.1.0 — Initial Interface
 
-## v0.1.0 — Wine Manager MVP (Pre-release)
-Status: ✅ Completed
+Status: Completed
 
-Initial working version of the Wine Manager tool.
+- Static table rendering
+- Dataset loaded from JSON
+- Basic UI layout
+- Initial deployment
+
+---
+
+## v0.2.0 — Interactive Catalog
+
+Status: Completed
+
+Major usability improvements to the wine catalog interface.
 
 Features:
-- Static web application hosted on Cloudflare Pages
-- CSV → JSON dataset conversion
-- Loading and rendering 1500+ wines
-- Search functionality
-- Filters:
-  - Wine type
-  - Country
-  - Region
-- Clean responsive UI
-- Dataset stored locally in JSON
-- Automatic deployment via Git push
 
-Tech stack:
-- HTML
-- CSS
-- Vanilla JavaScript
-- Cloudflare Pages
-- Python utility script for CSV conversion
-
----
-
-## v0.2.0 — Usability Improvements
-Status: 🔜 Planned
-
-Improve browsing experience for large datasets.
-
-Planned features:
 - Column sorting
+- Search functionality
+- Filtering by wine attributes
 - Pagination
-- Result counters
-- Better mobile layout
-- Improved search performance
+- Wine detail modal
+- Dark-theme compatible interface
+- Responsive layout improvements
+
+This version represents the completed frontend MVP.
 
 ---
 
-## v0.3.0 — Wine Detail System
-Status: 🔜 Planned
+## v0.3.0 — Database Integration
 
-Add deeper wine inspection.
+Status: Planned
 
-Planned features:
-- Wine detail modal
-- Additional metadata display
-- Supplier information
-- Cost / margin display
-- Alcohol / bottle volume
+Transition from static JSON data to a database-backed architecture.
+
+Objectives:
+
+- Create PostgreSQL database schema
+- Import wine dataset into database
+- Replace local JSON data source
+- Query wines from database
+- Maintain existing frontend features (search, filters, pagination)
+
+Target stack:
+
+Frontend  
+→ Supabase (PostgreSQL)
 
 ---
 
 ## v0.4.0 — Data Management
-Status: 🔜 Planned
 
-Introduce basic data editing capabilities.
+Status: Planned
 
-Planned features:
-- Add new wines
-- Edit wines
-- Delete wines
-- Import CSV
-- Export dataset
-
----
-
-## v0.5.0 — Wine List Builder
-Status: 🔜 Planned
-
-Enable restaurants or wine bars to curate lists.
-
-Planned features:
-- Create wine lists
-- Add wines to lists
-- Sort wine lists
-- Print-ready wine lists
-- Shareable list URLs
-
----
-
-## v0.6.0 — Database Integration
-Status: 🔜 Planned
-
-Move from static JSON dataset to a database.
-
-Possible technologies:
-- Supabase (PostgreSQL)
-- Cloudflare Workers API
-- Serverless architecture
-
-Benefits:
-- Persistent storage
-- Multi-user support
-- Real-time updates
-- Secure editing
-
----
-
-## v1.0.0 — Production Version
-Status: 🚧 Long-term goal
-
-Full restaurant-grade wine management system.
+Enhancements focused on managing and extending the wine dataset.
 
 Potential features:
-- Authentication
-- Role-based access
-- Multi-device editing
-- Inventory tracking
-- Supplier management
-- Sales analytics
+
+- Wine rating system
+- Favorite wines
+- Advanced filters
+- Price and vintage range filtering
+- Data normalization (regions, producers, varieties)
 
 ---
 
-# Long-Term Vision
+## v0.5.0 — Backend Layer
 
-Airgon.dev aims to become a **collection of practical developer projects**, including:
+Status: Planned
 
-- Wine Manager
-- WAR Assistant
-- Restaurant tools
-- Data exploration tools
+Introduce an API layer between the frontend and the database.
 
-All projects follow these principles:
+Objectives:
 
-- Minimal dependencies
-- Transparent architecture
-- Educational codebase
-- Real-world usability
+- REST API for wine queries
+- Server-side filtering and pagination
+- Improved query performance
+- Backend validation and business logic
+
+Architecture:
+
+Frontend  
+→ API  
+→ Database
 
 ---
 
-Author: Gonzalo González Dalbes  
-Project: airgon.dev
+## Long-Term Goals
+
+- Advanced search capabilities
+- Wine recommendation features
+- Integration with external wine datasets
+- Administrative interface for managing wines
