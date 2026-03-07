@@ -1,4 +1,10 @@
-.wm { max-width: 1100px; }
+/* ===============================
+   Layout
+================================ */
+
+.wm {
+  max-width: 1100px;
+}
 
 .wm-top {
   display: flex;
@@ -6,9 +12,17 @@
   align-items: center;
 }
 
-.wm-sub { color: var(--muted); }
+.wm-sub {
+  color: var(--muted);
+}
 
-.wm-controls { padding: 14px; }
+/* ===============================
+   Controls
+================================ */
+
+.wm-controls {
+  padding: 14px;
+}
 
 .wm-row {
   display: grid;
@@ -39,7 +53,31 @@
   box-shadow: 0 0 0 4px rgba(96,165,250,0.12);
 }
 
-.wm-table { padding: 14px; }
+/* Fix dropdown readability */
+
+select.wm-input {
+  background-color: #0f1a2b;
+  color: #e6edf3;
+  color-scheme: dark;
+}
+
+select.wm-input option {
+  background-color: #0f1a2b;
+  color: #e6edf3;
+}
+
+select.wm-input option:checked {
+  background-color: #1f3a6d;
+  color: #ffffff;
+}
+
+/* ===============================
+   Table
+================================ */
+
+.wm-table {
+  padding: 14px;
+}
 
 .wm-meta {
   display: flex;
@@ -49,8 +87,14 @@
   margin-bottom: 10px;
 }
 
-.wm-count { font-weight: 700; }
-.wm-hint { color: var(--muted); font-size: 13px; }
+.wm-count {
+  font-weight: 700;
+}
+
+.wm-hint {
+  color: var(--muted);
+  font-size: 13px;
+}
 
 .wm-scroll {
   overflow: auto;
@@ -64,7 +108,8 @@
   min-width: 860px;
 }
 
-.wm-t th, .wm-t td {
+.wm-t th,
+.wm-t td {
   padding: 10px 12px;
   border-bottom: 1px solid rgba(255,255,255,0.08);
   text-align: left;
@@ -80,15 +125,179 @@
   border-bottom: 1px solid rgba(255,255,255,0.12);
   font-size: 13px;
   color: var(--muted);
+
+  cursor: pointer;
+  user-select: none;
 }
 
-.wm-t tr:hover td {
+.wm-t th:hover {
+  color: #ffffff;
+}
+
+/* row interaction */
+
+.wm-t tbody tr {
+  cursor: pointer;
+}
+
+.wm-t tbody tr:hover td {
+  background: rgba(255,255,255,0.05);
+}
+
+/* numeric columns */
+
+.num {
+  text-align: right;
+}
+
+td.num {
+  color: var(--muted);
+}
+
+/* ===============================
+   Pagination
+================================ */
+
+.wm-pagination {
+  margin-top: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.wm-page-info {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.wm-page-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.wm-page-btn.is-active {
+  border-color: rgba(96,165,250,0.55);
+  box-shadow: 0 0 0 3px rgba(96,165,250,0.12);
+}
+
+.wm-page-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.wm-page-dots {
+  color: var(--muted);
+  padding: 0 2px;
+}
+
+/* ===============================
+   Modal
+================================ */
+
+.wm-modal[hidden] {
+  display: none;
+}
+
+.wm-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+}
+
+.wm-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+}
+
+.wm-modal-card {
+  position: relative;
+  z-index: 1;
+  width: min(760px, calc(100vw - 32px));
+  max-height: calc(100vh - 32px);
+  overflow: auto;
+  margin: 16px auto;
+  padding: 18px;
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: linear-gradient(180deg, rgba(9,18,34,0.98), rgba(5,11,22,0.98));
+  box-shadow: 0 20px 60px rgba(0,0,0,0.45);
+}
+
+.wm-modal-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.wm-modal-title {
+  margin: 0;
+}
+
+.wm-modal-subtitle {
+  margin: 6px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.wm-modal-body {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.wm-detail {
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.08);
   background: rgba(255,255,255,0.03);
 }
 
-.num { text-align: right; }
-td.num { color: var(--muted); }
+.wm-detail-label {
+  margin: 0 0 6px;
+  font-size: 12px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.wm-detail-value {
+  margin: 0;
+  color: var(--text);
+  font-size: 15px;
+  line-height: 1.4;
+  word-break: break-word;
+}
+
+body.wm-modal-open {
+  overflow: hidden;
+}
+
+/* ===============================
+   Responsive
+================================ */
 
 @media (max-width: 900px) {
-  .wm-row { grid-template-columns: 1fr 1fr; }
+  .wm-row {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 700px) {
+  .wm-modal-body {
+    grid-template-columns: 1fr;
+  }
+
+  .wm-modal-card {
+    width: calc(100vw - 20px);
+    margin: 10px auto;
+    padding: 14px;
+  }
 }
